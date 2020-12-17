@@ -11,12 +11,12 @@ if __name__ == '__main__':
     if len(A) != 10:
         print("Неверный размер списка", file=sys.stderr)
         exit(1)
-    c = 0
-    n = []
-    for i in A:
-        if i % 4 ==0:
-            c += i % 4 == 0
-            i *= i
-        n.append(i)
-    print(n)
-    print(c)
+    print(A)
+
+    j = 0
+    for i, item in enumerate(A):
+        if item % 4 == 0:
+            A[i] *= A[i]
+            j += 1
+
+    print(f"Преобразованный массив = {A} \nКол-во элементов возведенных в квадрат = {j}")
